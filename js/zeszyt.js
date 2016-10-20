@@ -16,7 +16,10 @@ var submit_btn = document.getElementById('submit'),
 	specialChar, 
 
 	soundNext = new Audio('mp3/Button_Press_2-Marianne_Gagnon-1415267358.mp3'),
-	soundWrong = new Audio('mp3/efx_NO-Fabio_Farinelli-955789468.mp3');
+	soundWrong = new Audio('mp3/efx_NO-Fabio_Farinelli-955789468.mp3'),
+	soundBtn = document.getElementById('soundBtn'),
+	onOff = '',
+	isSounOn = true;
 
 /***********************/
 /*       ON LOAD       */
@@ -47,10 +50,10 @@ function handleAnswer(){
 
 	console.log(answer, answer_hidden)
 	if (answer == answer_hidden){
-		soundNext.play();
+		if (isSounOn) soundNext.play();
 		getWord();
 	} else {
-		soundWrong.play();
+		if (isSounOn) soundWrong.play();
 	}
 }
 
@@ -60,6 +63,22 @@ function getAnswer(){
 
 function getAnswerHidden(){
 	return answer_hidden_field.value.trim().toLowerCase();
+}
+
+/***********************/
+/*   	TOGGLE SOUND	   */
+/***********************/
+
+soundBtn.onclick = function(){
+	onOff = document.getElementById('onOff');
+
+	if ( onOff.innerHTML == "on"){
+		isSounOn = false;
+		onOff.innerHTML = "off";
+	} else {
+		isSounOn = true;
+		onOff.innerHTML = "on";
+	}
 }
 
 /***********************/

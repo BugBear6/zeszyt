@@ -10,7 +10,20 @@
 
 <header>
 	<div class="container">
-		<div class="row"></div>
+		<div class="row">
+			<ul class="buttons">
+				<li id = "openLoginForm" tabindex="1">Zaloguj	<span>></span>
+					<div id ="loginForm">
+					<input type="text">
+					<input type="text">
+					<button id="loginBtn">Zaloguj się <span>></span></button>
+					</div>
+				</li>
+				<li id = "soundBtn">Dźwięk 	<span id="onOff">on</span></li>
+				<li id = "helpBtn">Pomoc		<span>></span></li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
 	</div>
 </header>
 

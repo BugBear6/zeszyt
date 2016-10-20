@@ -22,8 +22,94 @@ body{
 }        
  
 header{
-	background: @header_bg;
-	height: 109px;   
+	background: @header_bg;	  
+
+	.container{
+		width: 955px;
+    margin: 0 auto;
+	
+		.row{
+			margin: 0 11px 0;
+			position: relative;
+			height: 109px; 
+
+			ul{
+				position: absolute;
+				right: 0;
+				bottom: 7px;
+
+				li{
+			    text-transform: uppercase;
+			    background: #000;
+			    padding: 3px 5px;
+			    color: #fff;
+			    display: inline-block;
+			    font-size: 14px;
+			    min-width: 97px;
+			    margin-left: 6px;
+			    letter-spacing: -.8px;
+			    cursor: pointer;
+			    position: relative;
+
+			    #loginForm{
+			    	display: none;
+				    position: absolute;
+				    top: 23px;
+				    right: 0px;
+				    background: black;
+				    height: 113px;
+				    width: 191px;
+				    cursor: auto;	
+				    padding: 0 20px;
+
+				    input[type="text"]{
+				    	width: 100%;
+				    	margin: 10px auto;
+					    display: block;
+					    height: 23px;
+					    padding: 1px 3px;
+
+					    &:focus{
+					    	outline-color: red;
+					    	outline-width: 3px;
+					    }
+					  }
+					   button{
+					    	float: right;
+								text-transform: uppercase;
+						    background: #000;
+						    padding: 3px 5px;
+						    color: #fff;
+						    display: inline-block;
+						    font-size: 14px;
+						    min-width: 97px;
+						    margin-left: 6px;
+						    letter-spacing: -.8px;
+						    cursor: pointer;
+						    position: relative;
+						    border: none;
+				    }
+
+				    span{
+				    	margin-left: 8px;
+				    }
+			    }
+
+			    &#openLoginForm:hover #loginForm{
+			    	display:block;
+			    }
+
+					span{
+						color: red;
+						float: right;
+						margin-right: 1px;
+    				font-weight: bold;
+    				text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
 }   
 
 section{
@@ -133,54 +219,56 @@ section{
 				}
 		}
 	}	
-}
 
-.buttons{
-	margin-top: 121px;
-	position: absolute;
-	right: 0;
+	.buttons{
+		margin-top: 121px;
+		position: absolute;
+		right: 0;
 
-	li{
-		display: inline-block;
-		position: relative;
-		width: 86px;
-	  height: 84px;
-	  margin-left: 14px;
+		li{
+			display: inline-block;
+			position: relative;
+			width: 86px;
+		  height: 84px;
+		  margin-left: 14px;
 
-		button {
-	    width: 86px;
-	    height: 84px;
-	    font-family: 'Roboto',sans-serif;
-	    background: @button-color;
-	    border: none;
-	    font-size: 17px;
-	    padding: 5px 13px 0;
-	    letter-spacing: -1px;
-	    cursor: pointer;
-	    overflow: hidden;
-	    position: absolute;
-	    text-align: left;
-	    line-height: 13px;
+			button {
+		    width: 86px;
+		    height: 84px;
+		    font-family: 'Roboto',sans-serif;
+		    background: @button-color;
+		    border: none;
+		    font-size: 17px;
+		    padding: 5px 13px 0;
+		    letter-spacing: -1px;
+		    cursor: pointer;
+		    overflow: hidden;
+		    position: absolute;
+		    text-align: left;
+		    line-height: 13px;
 
-	    &:hover, 
-	    &:active, 
-	    &:focus{
-	    background: @button-darker;
-	    outline: none;
-	    }
-			
-			&#submit{
-	    	background: @primary;
+		    &:hover, 
+		    &:active, 
+		    &:focus{
+		    background: @button-darker;
+		    outline: none;
+		    }
+				
+				&#submit{
+		    	background: @primary;
 
-	    	&:hover, 
-	    	&:active,
-	    	&:focus{
-	    		background: @primary-darker;
-	    	}
-	   	}
+		    	&:hover, 
+		    	&:active,
+		    	&:focus{
+		    		background: @primary-darker;
+		    	}
+		   	}
+			}
 		}
 	}
 }
+
+
  
 footer{
 	background: @footer_bg;

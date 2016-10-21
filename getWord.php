@@ -1,16 +1,9 @@
 <?php
 header('Content-Type: application/json');
 
-$db_host = 'localhost';
-$db_name = 'zeszyt';
-$db_pass = '';
-$db_user = 'root';
+include_once("connect.php");
 
 $query_es = "SELECT * WHERE id = FROM pol_es";
-
-// connect to the database
-$connect = new mysqli($db_host, $db_user, $db_pass, $db_name);
-$connect->set_charset("utf8");
 
 if (!$connect){
 	die('Server error, try again later');

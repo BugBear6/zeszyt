@@ -27,19 +27,27 @@
 	</div>
 </header>
 
+<style>
+
+.zeszyt-main{
+	background-image: none
+}
+
+</style>
+
 <section class="zeszyt-main">
 	<div class="container">
 		<div class="row">
 			<div class="infoBox">
 				<div class="infoBoxContainer">
-					<p>Przetłumacz słowa</p>
+					<p>Dodaj słowa</p>
 					<div class="imgBox">
 					</div>
 				</div>
 			</div><!--infoBox-->
 			<div class="answersBox">
-				<div class="answerBox"><p id="word"> </p></div><!--answerBox-->
-				<div class="answerBox"><input type="text" id="answer" name="answer"></div><!--answerBox-->
+				<div class="answerBox"><input type="text" id="newWordEs" class="newWord" placeholder="español"></div><!--answerBox-->
+				<div class="answerBox"><input type="text" id="newWordPol" class="newWord" placeholder="polskie"></div><!--answerBox-->
 				<div class="clearfix"></div>
 			</div><!-- /.answersBox -->
 			
@@ -47,9 +55,9 @@
 	</div>
 	<div class="row">
 		<ul class="buttons">
-			<li><button id="submit">Sprawdź</button></li>
-			<li><button id="giveUp">Nie wiem</button></li>
-			<li><button id="next">Dalej</button></li>
+			<li><button id="add">Dodaj</button></li>
+			<li><button id="clear">Wyczyść</button></li>
+			<li><button id="back">Powrót</button></li>
 		</ul>						
 	</div>
 		</div>	<!-- /.row -->
@@ -62,6 +70,6 @@
 	</div>
 </footer>
 
-	<script src="js/zeszyt.js"></script>
+	<script src="js/admin.js"></script>
 </body>
 </html>

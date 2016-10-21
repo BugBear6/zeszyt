@@ -105,6 +105,10 @@ header{
 						margin-right: 1px;
     				font-weight: bold;
     				text-transform: uppercase;
+
+    				&:not(#onOff){
+    					line-height: 15px;
+    				}
 					}
 				}
 			}
@@ -211,6 +215,12 @@ section{
 						&:focus{
 							outline: none;
 						}
+
+						&::-webkit-input-placeholder{
+							font-weight: 300;
+							color: #444;
+						}
+
 			    }
 				}
 
@@ -232,6 +242,10 @@ section{
 		  height: 84px;
 		  margin-left: 14px;
 
+		  &:focus{
+		  	outline:none;
+		  }
+
 			button {
 		    width: 86px;
 		    height: 84px;
@@ -239,7 +253,7 @@ section{
 		    background: @button-color;
 		    border: none;
 		    font-size: 17px;
-		    padding: 5px 13px 0;
+		    padding: 5px 13px 0; 
 		    letter-spacing: -1px;
 		    cursor: pointer;
 		    overflow: hidden;
@@ -254,7 +268,8 @@ section{
 		    outline: none;
 		    }
 				
-				&#submit{
+				&#submit, 
+				&#add{
 		    	background: @primary;
 
 		    	&:hover, 
@@ -268,7 +283,9 @@ section{
 	}
 }
 
-
+#newWordEs{
+	margin-left: 0;
+}
  
 footer{
 	background: @footer_bg;

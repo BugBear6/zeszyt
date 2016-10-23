@@ -8,6 +8,7 @@ var submit_btn = document.getElementById('submit'),
 	answer_field = document.getElementById('answer'),
 	giveUp = document.getElementById('giveUp'),
 	nextBtn = document.getElementById('next'),
+	translateBtn = document.getElementById('translate'),
 
 	answer,
 	answer_hidden,
@@ -48,7 +49,7 @@ function handleAnswer(){
 	answer = getAnswer();
 	answer_hidden = getAnswerHidden();
 
-	console.log(answer, answer_hidden)
+	// console.log(answer, answer_hidden)
 	if (answer == answer_hidden){
 		if (isSounOn) soundNext.play();
 		getWord();
@@ -93,32 +94,8 @@ nextBtn.onclick = function(){
 	getWord();
 }
 
-/***********************/
-/*   LETTERS CHANGE    */
-/***********************/
-
-answer_field.onkeyup = function(){
-	phrase = this.value;
-	if( (specialChar = phrase.search('\\[i') ) >= 0)
-		this.value = phrase.substring(0, specialChar) + 'í';
-
-	if( (specialChar = phrase.search('\\[a') ) >= 0)
-		this.value = phrase.substring(0, specialChar) + 'á';
-
-	if( (specialChar = phrase.search('\\[e') ) >= 0)
-		this.value = phrase.substring(0, specialChar) + 'é';
-
-	if( (specialChar = phrase.search('\\[o') ) >= 0)
-		this.value = phrase.substring(0, specialChar) + 'ó';
-
-	if( (specialChar = phrase.search('\\[u') ) >= 0)
-		this.value = phrase.substring(0, specialChar) + 'ú';
-
-	if( (specialChar = phrase.search(';') ) >= 0)
-		this.value = phrase.substring(0, specialChar) + 'ñ';
-
-	if( (specialChar = phrase.search(":") ) >= 0)
-		this.value = phrase.substring(0, specialChar) + 'ü';		
+translateBtn.onclick = function(){ 
+	window.open("https://translate.google.pl/?hl=pl#es/en/" + answer_hidden_field.value); 
 }
 
 /***********************/
@@ -142,7 +119,7 @@ function handleServerResponse(){
 	if (xml.readyState == 4) {
 		if (xml.status == 200) {
 			xmlResponse = xml.responseText;
-			console.log(xmlResponse);
+			// console.log(xmlResponse);
 			xmlResponse = JSON.parse(xmlResponse);
 			word_field.innerHTML = xmlResponse.pol;
 			answer_hidden_field.value = xmlResponse.es;

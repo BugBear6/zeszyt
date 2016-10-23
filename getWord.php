@@ -9,15 +9,20 @@ if (!$connect){
 	die('Server error, try again later');
 } else {
 	
-	// get number of rows
-	if ($rows = $connect -> query("SELECT COUNT(*) FROM pol_es")){
-		$rows_num = $rows -> fetch_object() -> {'COUNT(*)'} ;
-		
-		// generate random number between 1 and the total number of rows in table
-		$random_number = rand(1, $rows_num);
+	// get all the id
+	if ($rows = $connect -> query("SELECT id FROM pol_es")){
+		$rowIdList = array();
+		foreach ($rows as $rowId) {			
+			array_push( $rowIdList, $rowId['id'] );
+		}
+			
+		// generate random number between first and last id number
+		$arr_length = count( $rowIdList );
+		$random_number = rand( 0 , $arr_length-1 );
+		$random_id_number = $rowIdList[$random_number];
 		
 		// get random word from the table
-		if($result = $connect -> query( "SELECT * FROM pol_es WHERE id = " . $random_number )){
+		if($result = $connect -> query( "SELECT * FROM pol_es WHERE id = " . $random_id_number )){
 		
 			$row = $result -> fetch_object();
 			$pol = $row -> pol;
@@ -33,7 +38,7 @@ if (!$connect){
 			echo json_encode($json);
 			
 		} else {
-			die("error");
+			die("error with random id number:" . $random_id_number . "and random number " . $random_number );
 		}
 		
 	} else {

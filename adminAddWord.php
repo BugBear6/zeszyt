@@ -46,7 +46,7 @@
 				</div>
 			</div><!--infoBox-->
 			<div class="answersBox">
-				<div class="answerBox"><input type="text" id="newWordEs" class="newWord" placeholder="español"></div><!--answerBox-->
+				<div class="answerBox"><input type="text" id="newWordEs" class="newWord entryField" placeholder="español"></div><!--answerBox-->
 				<div class="answerBox"><input type="text" id="newWordPol" class="newWord" placeholder="polskie"></div><!--answerBox-->
 				<div class="clearfix"></div>
 			</div><!-- /.answersBox -->
@@ -71,5 +71,6 @@
 </footer>
 
 	<script src="js/admin.js"></script>
+	<script src="js/esLetters.js"></script>
 </body>
 </html>

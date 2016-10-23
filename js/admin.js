@@ -21,20 +21,26 @@ function clearForm() {
 
 newWordPol.onkeydown = function(e){
 	if ( e.keyCode == 13 || e.which == 13 ){
-		addWord();
+		if ( newWordEs.value != '' && newWordPol.value != '' )
+			addWord();
+	newWordEsField.focus();
 	}
 }
 newWordEs.onkeydown = function(e){
 	if ( e.keyCode == 13 || e.which == 13 ){
-		addWord();
+		if ( newWordEs.value != '' && newWordPol.value != '' )
+			addWord();
 	}
 }
 
 /***********************/
-/*   AJAX REQUEST      */
+/*   AJAX REQUESTS     */
 /***********************/
 
 var xml = new XMLHttpRequest();
+
+/* ADD WORD */
+
 function addWord(){
 
 	newWordPol = newWordPolField.value,
@@ -54,5 +60,26 @@ function addWord(){
 		xml.send();
 	}
 }
+
+/* FIND WORD */
+
+function findWord(){
+
+
+	if (xml.readyState == 4 || xml.readyState == 0) {
+		xml.open("GET", "addWord.php?newWordEs=" + newWordEs + "&newWordPol=" + newWordPol, true);
+		xml.onreadystatechange = function(){
+
+			if (xml.readyState == 4) {
+				if (xml.status == 200) {
+					console.log("New word: " + newWordEs + " - " + newWordPol + " added.");
+						clearForm();
+				}
+			}
+		};
+		xml.send();
+	}
+}
+
 
 

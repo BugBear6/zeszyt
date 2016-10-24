@@ -1,31 +1,8 @@
-<!DOCTYPE html>
-<html lang="pl-PL">
-<head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<?php include_once('inc/header.php'); ?>
 
-	<title>Zeszyt</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header>
-	<div class="container">
-		<div class="row">
-			<ul class="buttons">
-				<li id = "openLoginForm" tabindex="1">Zaloguj	<span>></span>
-					<div id ="loginForm">
-					<input type="text">
-					<input type="text">
-					<button id="loginBtn">Zaloguj się <span>></span></button>
-					</div>
-				</li>
-				<li id = "soundBtn">Dźwięk 	<span id="onOff">on</span></li>
-				<li id = "helpBtn">Pomoc		<span>></span></li>
-			</ul>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-</header>
+<?php if ( ! $isAdmin)
+	header( 'Location: index.php' );
+?>
 
 <style>
 

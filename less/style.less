@@ -12,6 +12,11 @@
 	font-family: 'Roboto', sans-serif;
 }
 
+a{
+	text-decoration: none;
+	color: #fff;
+}
+
 .clearfix{
 	clear:both;
 }
@@ -52,6 +57,7 @@ header{
 			    position: relative;
 
 			    #loginForm{
+			    	z-index: 555;
 			    	display: none;
 				    position: absolute;
 				    top: 23px;
@@ -60,7 +66,31 @@ header{
 				    height: 113px;
 				    width: 191px;
 				    cursor: auto;	
-				    padding: 0 20px;
+				    padding: 0;
+
+				    .loginFormContainer{
+				    	width: 100%;
+				    	height: 100%;
+				    	position: relative;
+				    	overflow: hidden;
+				    	padding-left: 20px;
+				    	padding-right: 20px;
+
+				    	ul{
+				    		position: static;
+				    		margin-top: 15px;
+
+				    		li{
+				    			margin-top: 5px;
+				    		}
+				    	}
+				    }
+
+				    #logoutBtn{
+				    	position:absolute;
+				    	bottom: 15px;
+				    	right:15px;
+				    }
 
 				    input[type="text"]{
 				    	width: 100%;
@@ -97,6 +127,11 @@ header{
 
 			    &#openLoginForm:hover #loginForm{
 			    	display:block;
+
+			    }			    
+
+			    &#helpBtn:hover #helpBox{
+			    	display:block;
 			    }
 
 					span{
@@ -112,9 +147,67 @@ header{
 					}
 				}
 			}
+
+			#helpBox{
+				z-index: 555;
+				display: none;
+			  position: absolute;
+			  top: 23px;
+			  right: 0px;
+			  background: black;
+			  height: 113px;
+			  width: 340px;
+			  cursor: auto;	
+			  
+			  .helpBoxContainer{
+			  	width: 100%;
+			  	height: 100%;
+			  	position: relative;
+
+			  	ul{
+			  		position:static;
+			  		margin: 0;
+			  		margin-top: 10px;
+			  		-moz-column-count: 4;
+				    -moz-column-gap: 20px;
+				    -webkit-column-count: 4;
+				    -webkit-column-gap: 5px;
+				    column-count: 4;
+				    column-gap: 5px;
+				    padding: 0 20px;
+
+
+				    li{
+				    	cursor: auto;
+				    	text-transform: lowercase;
+				    	width: auto;
+				    	min-width:auto;
+				    	font-size: 17px;
+				    	span{
+				    		text-transform: lowercase;
+				    	}
+				    }
+			  	}
+
+			  	p{
+			  		position: absolute;
+			  		width: 100%;
+			  		bottom: 15px;
+			  		background: none;
+			  		padding: 0 20px;
+			  		text-align: center;
+			  	}
+			  }
+
+			  .esLetter{
+			  	float: none;
+			  }
+			}
 		}
 	}
 }   
+
+
 
 section{
 	overflow: hidden;

@@ -5,6 +5,9 @@
 @header_bg			:		#c51717;
 @footer_bg			:		#c51717;
 
+@medium: ~"only screen and (max-width: 991px)";
+@small: ~"only screen and (max-width: 678px)";
+
 *{
 	margin: 0;
 	padding: 0;
@@ -23,6 +26,10 @@ a{
 
 body{
  background: #444;  
+
+ @media @small{
+ 	background: @footer_bg	;
+ }
  
 }        
  
@@ -32,18 +39,43 @@ header{
 	.container{
 		width: 955px;
     margin: 0 auto;
+
+    @media @medium {
+    	width: 100%;
+    }
 	
 		.row{
 			margin: 0 11px 0;
 			position: relative;
 			height: 109px; 
 
+			@media @small{
+				height: 50px;
+				margin: 0;
+			}
+
 			ul{
 				position: absolute;
 				right: 0;
 				bottom: 7px;
 
+				@media @medium{
+					right: 0;
+			    bottom: 7px;
+			    left: 0;
+			    margin-left: auto;
+			    margin-right: auto;
+			    width: 323px;
+				}
+
+				@media @small{
+					width: 100%;
+					display: flex;
+					justify-content:center;
+				}
+
 				li{
+					height: 21px;
 			    text-transform: uppercase;
 			    background: #000;
 			    padding: 3px 5px;
@@ -56,14 +88,25 @@ header{
 			    cursor: pointer;
 			    position: relative;
 
+			    @media @small{
+						font-size: 12px;
+						min-width: 83px;
+			    }
+
+			    &:first-child{
+			    	@media @small{
+			    		margin-left: 0;
+			    	}
+			    }
+
 			    #loginForm{
 			    	z-index: 555;
 			    	display: none;
 				    position: absolute;
-				    top: 23px;
-				    right: 0px;
+				    top: 21px;
+				    left: 0px;
 				    background: black;
-				    height: 113px;
+				    height: 160px;
 				    width: 191px;
 				    cursor: auto;	
 				    padding: 0;
@@ -77,11 +120,20 @@ header{
 				    	padding-right: 20px;
 
 				    	ul{
+				    		display: block;
 				    		position: static;
 				    		margin-top: 15px;
 
+				    		@media @small{
+				    			text-align: center;
+				    		}
+
 				    		li{
-				    			margin-top: 5px;
+				    			margin: 15px 0 10px 0 ;
+
+				    			@media @small{
+				    				text-align: center;
+				    			}
 				    		}
 				    	}
 				    }
@@ -92,11 +144,12 @@ header{
 				    	right:15px;
 				    }
 
-				    input[type="text"]{
+				    input[type="text"],
+				    input[type="password"]{
 				    	width: 100%;
-				    	margin: 10px auto;
+				    	margin: 23px auto;
 					    display: block;
-					    height: 23px;
+					    height: 25px;
 					    padding: 1px 3px;
 
 					    &:focus{
@@ -152,12 +205,17 @@ header{
 				z-index: 555;
 				display: none;
 			  position: absolute;
-			  top: 23px;
+			  top: 21px;
 			  right: 0px;
 			  background: black;
-			  height: 113px;
+			  height: 160px;
 			  width: 340px;
 			  cursor: auto;	
+
+			  @media @small{			  	
+			  	width: 235px;
+			  	height: 220px;
+			  }
 			  
 			  .helpBoxContainer{
 			  	width: 100%;
@@ -165,24 +223,46 @@ header{
 			  	position: relative;
 
 			  	ul{
+			  		display:block;
+			  		text-align: center;
 			  		position:static;
 			  		margin: 0;
-			  		margin-top: 10px;
-			  		-moz-column-count: 4;
-				    -moz-column-gap: 20px;
-				    -webkit-column-count: 4;
+			  		margin-top: 20px;
+			  		-moz-column-count: 3;
+				    -moz-column-gap: 5px;
+				    -webkit-column-count: 3;
 				    -webkit-column-gap: 5px;
-				    column-count: 4;
+				    column-count: 3;
 				    column-gap: 5px;
 				    padding: 0 20px;
+				    positon:absolute;
+				    top:0px;
+				    left: 0;
+				    right: 0;
+				    margin: 20px auto 0;
+
+
+				    @media @small{
+				    	position: static;
+				    	margin-top: 20px;
+					    -moz-column-count: 2;
+					    -webkit-column-count: 5;
+					    column-count: 2;					    
+				    }
 
 
 				    li{
+				    	display: block;
 				    	cursor: auto;
 				    	text-transform: lowercase;
 				    	width: auto;
 				    	min-width:auto;
 				    	font-size: 17px;
+
+							@media @small{
+								font-size: 16px;
+							}
+
 				    	span{
 				    		text-transform: lowercase;
 				    	}
@@ -192,10 +272,14 @@ header{
 			  	p{
 			  		position: absolute;
 			  		width: 100%;
-			  		bottom: 15px;
+			  		bottom: 30px;
 			  		background: none;
 			  		padding: 0 20px;
 			  		text-align: center;
+
+			  		@media @small{
+			  			bottom: 40px;
+			  		}
 			  	}
 			  }
 
@@ -221,13 +305,25 @@ section{
   background-repeat: no-repeat;
   background-position: center center;
 
+  @media @medium{
+  	min-height: auto;
+  }
+
 	.container{
 		width: 955px;
     margin: 0 auto;
+
+    @media @medium{
+    	width: 100%;
+    }
 	
 		.row{
 			margin: 0 40px 0;
 			position: relative;
+
+			@media @small{
+				margin: 0;
+			}
 
 			.infoBox {
 		    background: @primary;
@@ -235,6 +331,10 @@ section{
 		    height: 252px;
 				position: absolute;
 				top: 3px;
+
+				@media @medium {
+					display: none;
+				}
 
 		    p{
 			    background: black;
@@ -276,6 +376,18 @@ section{
 				.answersBox{
 					margin-left: 277px;
 					margin-top: 134px;
+
+					@media @medium {
+						margin-top: 35px;
+						width: 596px;
+						margin-left: auto;
+						margin-right: auto;
+					}
+
+					@media @small{
+						width: 250px;
+						margin-top: 55px;
+					}
 				}
 
 				.answerBox{
@@ -286,6 +398,14 @@ section{
 			    float: left;
 			    padding: 12px 5px 12px 13px;
 
+			    @media @small {
+			    	height: 70px;
+			    	width: 100%;
+			    	padding: 7px 5px 7px 5px;
+			    	display: block;
+			    	margin-top: 25px;
+			    }
+
 			    p, input{
 			    	border: 3px solid #fff;
 			    	width: 100%;
@@ -295,6 +415,13 @@ section{
 				    text-align: center;
 				    font-size: 23px;	
 				    font-weight: bold;
+
+				    @media @small{
+				    	border: 2px solid #fff;
+				    	padding-top: 10px;
+				    	font-size: 16px;
+				    	font-weight: 500;
+				    }
 			    }
 
 			    p{   	    
@@ -303,7 +430,12 @@ section{
 
 			    input{
 				    margin-left: -7px;
-				    padding-bottom: 24px;
+				    padding-bottom: 24px;		
+
+				    @media @small{
+				    	margin-left: 0;
+				    	padding-bottom: 14px;
+				    }
 
 						&:focus{
 							outline: none;
@@ -325,10 +457,23 @@ section{
 		}
 	}	
 
-	.buttons{
+	ul.buttons{
 		margin-top: 121px;
 		position: absolute;
 		right: 0;
+
+		@media @medium {
+			position: static;
+			width: 398px;
+			margin: 100px auto -4px;
+			display: flex;
+			justify-content: space-around;
+		}
+
+		@media @small{
+			margin: 80px auto 0px;
+			width: 95%;
+		}
 
 		li{
 			display: inline-block;
@@ -336,6 +481,19 @@ section{
 			width: 86px;
 		  height: 84px;
 		  margin-left: 14px;
+
+		  @media @small {
+		  	width: auto;
+		  	height: auto;
+		  	margin-left: 0;
+		  }
+
+
+		  &:first-child{
+		  	@media @medium{
+		  		margin-left: 0;
+		  	}
+		  }
 
 		  &:focus{
 		  	outline:none;
@@ -355,6 +513,16 @@ section{
 		    position: absolute;
 		    text-align: left;
 		    line-height: 13px;
+
+
+			  @media @small{
+			  	width: 60px;
+			  	height: 65px;
+			  	font-size: 13px;
+			  	text-align: center;
+			  	position: static;
+			  	padding: 0 3px;
+			  }
 
 		    &:hover, 
 		    &:active, 
@@ -494,5 +662,8 @@ section{
 footer{
 	background: @footer_bg;
 	height: 120px;
-	    
+		
+		@media @small {
+			height: auto;
+		}
 } 

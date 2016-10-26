@@ -12,3 +12,5 @@ if ($login == 'admin' && $password = 'admin'){
 	$_SESSION['isAdmin'] = false;
 	header('Location: index.php');
 
+	header ('Location: adminAddWord.php');
+

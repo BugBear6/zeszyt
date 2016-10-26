@@ -13,19 +13,19 @@ var wordPol = document.getElementById('wordPol'),
 
 /* INPUT FIELDS CONTROL */	
 
-wordPol.onkeyup = function(){
+wordPol.onkeydown = function(){
 	wordEs.value = '';
-	if (wordPol.value.length >= 2)
+	if (wordPol.value.length >= 1)
 		search();
-	else if (wordPol.value.length < 2)
+	else if (wordPol.value.length < 1)
 		resultsTable.innerHTML = '';
 }
 
-wordEs.onkeyup = function(){
+wordEs.onkeydown = function(){
 	wordPol.value = '';
-	if (wordEs.value.length >= 2)
+	if (wordEs.value.length >= 1)
 		search();
-	else if (wordEs.value.length < 2)
+	else if (wordEs.value.length < 1)
 		resultsTable.innerHTML = '';
 }
 

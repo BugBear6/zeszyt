@@ -1,7 +1,6 @@
 /***********************/
 /*   LETTERS CHANGE    */
 /***********************/
-
 var entryFields = document.querySelectorAll('.entryField');
 
 for ( var i = 0; i < entryFields.length; i++ ) {
@@ -34,5 +33,11 @@ function changeLetters(self){
 		self.value = phrase.substring(0, specialChar) + 'ñ';
 
 	if( (specialChar = phrase.search(":") ) >= 0)
-		self.value = phrase.substring(0, specialChar) + 'ü';		
+		self.value = phrase.substring(0, specialChar) + 'ü';	
+
+	if( (specialChar = phrase.search("\\[!") ) >= 0)
+		self.value = phrase.substring(0, specialChar) + '¡';	
+
+	if( (specialChar = phrase.search("\\[\\?") ) >= 0)
+		self.value = phrase.substring(0, specialChar) + '¿';		
 }

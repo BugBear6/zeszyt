@@ -46,8 +46,8 @@ answer_field.onkeydown = function(e){
 }
 
 function handleAnswer(){
-	answer = replaceX( getAnswer() );
-	answer_hidden = replaceX( getAnswerHidden() );
+	answer = replaceMarks( getAnswer() );
+	answer_hidden = replaceMarks( getAnswerHidden() );
 
 	// console.log(answer, answer_hidden)
 	if (answer == answer_hidden){
@@ -66,7 +66,7 @@ function getAnswerHidden(){
 	return answer_hidden_field.value.trim().toLowerCase();
 }
 
-function replaceX(string){
+function replaceMarks(string){
 	string = string.replace(/  /g, ' ');
 	string = string.replace(/!/g, '');
 	string = string.replace(/¡/g, '');

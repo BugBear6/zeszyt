@@ -4,10 +4,10 @@ header('Content-Type: application/json');
 include_once("connect.php");
 
 if(isset($_GET['wordes']))
-	$esWord = $_GET['wordes'];
+	$esWord = htmlentities($_GET['wordes']);
 
 if(isset($_GET['wordpol']))
-	$polWord = $_GET['wordpol'];
+	$polWord = htmlentities($_GET['wordpol']);
 
 $returnArray = array();
 

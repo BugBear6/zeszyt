@@ -2,8 +2,8 @@
 
 session_start();
 
-$login = $_POST['login'];
-$password = $_POST['password'];
+$login = htmlentities($_POST['login']);
+$password = htmlentities($_POST['password']);
 
 if ($login == 'admin' && $password = 'admin'){
 	$_SESSION['isAdmin'] = true;

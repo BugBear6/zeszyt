@@ -5,11 +5,14 @@ var entryFields = document.querySelectorAll('.entryField');
 
 for ( var i = 0; i < entryFields.length; i++ ) {
 	var entryField = entryFields[i];
-	entryField.onkeyup = function(){
-		var self = this;
+
+	entryField.addEventListener('keyup', function(){
+				var self = this;
 		changeLetters(self);
 	}
-}
+}, false);
+
+
 
 function changeLetters(self){
 	// console.log(self);

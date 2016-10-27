@@ -19,19 +19,22 @@ function clearForm() {
 	newWordEsField.value = '';
 }
 
-newWordPol.onkeydown = function(e){
+newWordPol.addEventListener('keyup', function(e){
 	if ( e.keyCode == 13 || e.which == 13 ){
 		if ( newWordEs.value != '' && newWordPol.value != '' )
 			addWord();
 	newWordEsField.focus();
 	}
-}
-newWordEs.onkeydown = function(e){
+}, false);
+
+
+newWordEs.addEventListener('keyup', function(e){
 	if ( e.keyCode == 13 || e.which == 13 ){
 		if ( newWordEs.value != '' && newWordPol.value != '' )
 			addWord();
 	}
-}
+}, false);
+
 
 /***********************/
 /*   AJAX REQUESTS     */

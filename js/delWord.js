@@ -13,21 +13,21 @@ var wordPol = document.getElementById('wordPol'),
 
 /* INPUT FIELDS CONTROL */	
 
-wordPol.onkeydown = function(){
-	wordEs.value = '';
+wordPol.addEventListener('keyup', function(){
+		wordEs.value = '';
 	if (wordPol.value.length >= 1)
 		search();
 	else if (wordPol.value.length < 1)
 		resultsTable.innerHTML = '';
-}
+}, false);
 
-wordEs.onkeydown = function(){
-	wordPol.value = '';
+wordEs.addEventListener('keyup', function(){
+		wordPol.value = '';
 	if (wordEs.value.length >= 1)
 		search();
 	else if (wordEs.value.length < 1)
 		resultsTable.innerHTML = '';
-}
+}, false);
 
 /* AJAX REQUEST */
 

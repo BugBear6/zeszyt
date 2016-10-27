@@ -3,9 +3,9 @@ header('Content-Type: application/json');
 
 include_once("connect.php");
 
-$id = $_GET['id'];
-$esWord = $_GET['wordes'];
-$polWord = $_GET['wordpol'];
+$id = htmlentities($_GET['id']);
+$esWord = str_replace('  ', ' ', trim( htmlentities( $_GET['wordes'] ) ) );
+$polWord = str_replace('  ', ' ', trim( htmlentities( $_GET['wordpol'] ) ) );
 
 $query = "UPDATE pol_es SET es='" .$esWord. "', pol='" .$polWord. "' WHERE id=" .$id;
 

@@ -613,6 +613,18 @@ section{
 									width:145px;
 								}
 
+								&:nth-last-child(1){
+									@media @small{
+										width: 56px;
+									}
+								}
+
+								&:nth-last-child(2){
+									@media @small{
+										width: 44px;
+									}
+								}
+
 								&.tableRowId{
 									display:none;
 								}
@@ -645,6 +657,11 @@ section{
 									font-size: 16px;
 									padding: 3px 5px;
 
+									@media @small{
+										font-size: 11px;
+										padding: 1px 2px;
+									}
+
 								}
 							}
 						}
@@ -657,6 +674,51 @@ section{
 
 #newWordEs{
 	margin-left: 0;
+}
+
+.admin-main{
+
+	min-height: 250px;
+	
+	.container{
+
+		.row{
+			.infoBox{
+				@media @medium{
+					display: block;
+
+					.infoBoxContainer{
+						table{
+							tr{
+								td{
+
+									input[type="text"]{
+										@media @small{
+											font-size: 11px !important;
+										}
+									}
+
+									button{
+										width: 45px;
+								    text-align: left;
+								    padding-left: 3px;
+								    overflow: hidden;
+								    white-space: nowrap;
+
+										&.delBtn{
+											width: 45px;
+											text-align: center;
+											padding-left: 0;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
  
 footer{

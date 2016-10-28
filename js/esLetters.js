@@ -9,8 +9,8 @@ for ( var i = 0; i < entryFields.length; i++ ) {
 	entryField.addEventListener('keyup', function(){
 				var self = this;
 		changeLetters(self);
-	}
-}, false);
+	}, false);
+}
 
 
 

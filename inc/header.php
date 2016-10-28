@@ -24,7 +24,7 @@
 	<div class="container">
 		<div class="row">
 			<ul class="buttons">
-				<li id = "openLoginForm" tabindex="1"><?php if($isAdmin) echo "Zarządzaj"; else echo "Zaloguj"; ?> <span>></span>
+				<li id = "openLoginForm"><?php if($isAdmin) echo "Zarządzaj"; else echo "Zaloguj"; ?> <span>></span>
 					<div id ="loginForm">
 						<div class="loginFormContainer">
 							<form action="login.php" method="post">
